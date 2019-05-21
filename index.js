@@ -1,4 +1,4 @@
-const Registry = require('./registryOnChain/registryOnChain')
+const registry = require('./registryOnChain/registryOnChain')
 
 const connect = require('connect');
 const query = require('qs-middleware');
@@ -25,13 +25,13 @@ app.use("/graphiql", graphql({ schema, graphiql: true }));
 app.use("/api", sofa({ schema }));
 
 app.get('/api/getContractAddress', (req, res) => {
-  Registry.getContractAddress().then(val => {
+  registry.getContractAddress().then(val => {
     res.json({ address: val });
   })
 })
 
 app.get('/api/getServices', (req, res) => {
-  Registry.getServices().then(val => {
+  registry.getServices().then(val => {
     res.json({ services: val });
 
   })
@@ -39,7 +39,7 @@ app.get('/api/getServices', (req, res) => {
 
 app.get('/api/getService/:serviceId', function (req, res) {
   const serviceId=parseInt(req.params["serviceId"]);
-  Registry.getService(serviceId).then(val => {
+  registry.getService(serviceId).then(val => {
     res.json({ serviceId: serviceId, service: val });
   }).catch(error => {
     console.log(error);
@@ -48,7 +48,7 @@ app.get('/api/getService/:serviceId', function (req, res) {
 
 app.get('/api/getBootstraps/:serviceId', function (req, res) {
   const serviceId=parseInt(req.params["serviceId"]);
-  Registry.getBootstraps(serviceId).then(val => {
+  registry.getBootstraps(serviceId).then(val => {
     res.json({ serviceId: serviceId, service: val});
 
   }).catch(error => {
