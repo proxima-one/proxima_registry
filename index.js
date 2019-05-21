@@ -18,8 +18,6 @@ const schema = makeExecutableSchema({ typeDefs, resolvers });
 const server = new ApolloServer({ typeDefs, resolvers });
 
 const app = express();
-//const app = connect();
-//app.use(query());
 const path = '/graphql';
 
 server.applyMiddleware({ app, path });
@@ -27,14 +25,12 @@ app.use("/graphiql", graphql({ schema, graphiql: true }));
 app.use("/api", sofa({ schema }));
 
 app.get('/api/getContractAddress', (req, res) => {
-  //console.log(Registry.getContractAddress());
   Registry.getContractAddress().then(val => {
     res.json({ address: val });
   })
 })
 
 app.get('/api/getServices', (req, res) => {
-  //console.log(Registry.getServices());
   Registry.getServices().then(val => {
     res.json({ services: val });
 
@@ -43,7 +39,6 @@ app.get('/api/getServices', (req, res) => {
 
 app.get('/api/getService/:serviceId', function (req, res) {
   const serviceId=parseInt(req.params["serviceId"]);
-  //console.log(Registry.getService(serviceId));
   Registry.getService(serviceId).then(val => {
     res.json({ serviceId: serviceId, service: val });
   }).catch(error => {
@@ -53,7 +48,6 @@ app.get('/api/getService/:serviceId', function (req, res) {
 
 app.get('/api/getBootstraps/:serviceId', function (req, res) {
   const serviceId=parseInt(req.params["serviceId"]);
-  //console.log(Registry.getBootstraps(serviceId));
   Registry.getBootstraps(serviceId).then(val => {
     res.json({ serviceId: serviceId, service: val});
 
