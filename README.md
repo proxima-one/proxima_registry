@@ -5,6 +5,7 @@
 ## Installation
 
 npm install yarn
+
 yarn
 
 ## Use
