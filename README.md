@@ -4,9 +4,7 @@
 
 ## Installation
 
-npm install yarn
-
-yarn
+npm install
 
 ## Use
 
