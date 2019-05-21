@@ -1,4 +1,4 @@
-const Registry = require('./registry')
+const Registry = require('./registryOnChain/registryOnChain')
 
 const connect = require('connect');
 const query = require('qs-middleware');
