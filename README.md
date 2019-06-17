@@ -22,11 +22,6 @@ registry.getRegistryAddress()
 
 This function returns the address of the registry. 
 
-#### Output
-
-```JSON
-
-```
 
 ### Get Services
 
