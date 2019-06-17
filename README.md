@@ -1,14 +1,15 @@
 
 # Proxima Registry
 
+The Proxima Registry is designed to interact with the chain, and the registry. 
 
 ## Installation
 
-npm install
+`npm install`
 
 ## Use
 
-node index.js
+`node index.js`
 
 ## API
 
@@ -34,11 +35,6 @@ var services = registry.getServices()
 ```
 This function returns the list of services by ID. 
 
-#### Output 
-
-```JSON
-
-```
 
 ### Get Service 
 ```javascript
@@ -51,11 +47,7 @@ registry.getService(serviceId)
 
 This returns the associated service variables.
 
-#### Output
 
-```JSON
-
-```
 
 ### Get Bootstraps
 ```javascript
@@ -69,11 +61,7 @@ registry.getBootstraps(serviceId)
 
 This returns the associated bootstrap nodes with the service.
 
-#### Output
 
-```JSON
-
-```
 ## Schema 
 
 ### Service
